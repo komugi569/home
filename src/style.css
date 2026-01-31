@@ -37,11 +37,13 @@ footer {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 6s ease-out,  transform 3s ease-out;
+  pointer-events: none; /*ローディング中に触れない*/
 }
 
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .loading {
@@ -52,4 +54,26 @@ footer {
     font-size: 24px;
     background: #0f172a;
     color: white;
+}
+
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  background: #0f172a;
+  color: white;
+
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.loading.hide {
+  opacity: 0;
+  pointer-events: none;
 }

@@ -5,66 +5,68 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [show, setShow] = useState(false);
 
-  //ローディング制御
   useEffect(() => {
-    const loadingTimer = setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
     }, 1000);
 
-    return () => clearTimeout(loadingTimer);
+    return () => clearTimeout(timer);
   }, []);
-  
-  //画面が描画される直前にフェードイン開始
+
   useLayoutEffect(() => {
     if (!loading) {
-        setShow(true);
-      }
+      setShow(true);
+    }
   }, [loading]);
 
-  if (loading) {
-    return <div className="loading">Loading...</div>;
-  }
-
   return (
-    <div className={`fade-in ${show ? "show" : ""}`}>
-    <header>
-      <h1>PINE3</h1>
-      <p>未来を繋ぐプラットフォーム</p>
-      </header>
+    <>
+      {/* ローディング（フェードアウト） */}
+      <div className={`loading ${loading ? "" : "hide"}`}>
+        Loading...
+      </div>
 
-      <main>
-        <section className="card">
-          <h2>About</h2>
-          <p>PINE3は新感覚のプラットフォームです。</p>
-          </section>          
-          
-        <section className="card">
-          <h2>Features</h2>
-          <ul>
-            <li>新感覚のインターフェース</li>
-            <li>高速な処理速度</li>
-            <li>セキュリティ強化</li>
-          </ul>
+      {/* フェードイン本体 */}
+      <div className={`fade-in ${show ? "show" : ""}`}>
+        <header>
+          <h1>PINE3</h1>
+          <p>未来を繋ぐプラットフォーム</p>
+        </header>
+
+        <main>
+          <section className="card">
+            <h2>About</h2>
+            <p>PINE3は新感覚のプラットフォームです。</p>
           </section>
-          
+
+          <section className="card">
+            <h2>Features</h2>
+            <ul>
+              <li>新感覚のインターフェース</li>
+              <li>高速な処理速度</li>
+              <li>セキュリティ強化</li>
+            </ul>
+          </section>
+
           <section>
             <h2>リンク</h2>
             <a
-            href="https://login.pine-online.net"
-            target="_blank"
-            rel="noopener noreferrer"
+              href="https://login.pine-online.net"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               ログインページへ
             </a>
           </section>
-      </main>
+        </main>
 
-      <footer>
-        <p>2026 PINE3 All rights reserved.</p>
-     </footer>
+        <footer>
+          <p>2026 PINE3 All rights reserved.</p>
+        </footer>
       </div>
+    </>
   );
 }
 
-
 export default App;
+
