@@ -22,8 +22,10 @@ function App() {
   return (
     <>
       {/* ローディング（フェードアウト） */}
-      <div className={`loading ${loading ? "" : "hide"}`}>Loading...</div>
-      <div className="spinner"></div>
+      <div className={`loading ${loading ? "" : "hide"}`}>
+        <div className="spinner"></div>
+        Loading...
+      </div>
       {/* フェードイン本体 */}
       <div className={`fade-in ${show ? "show" : ""}`}>
         <header>
