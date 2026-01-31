@@ -7,7 +7,6 @@ function App() {
 
   //ローディング制御
   useEffect(() => {
-  //ローディング終了
     const loadingTimer = setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -15,13 +14,11 @@ function App() {
     return () => clearTimeout(loadingTimer);
   }, []);
   
-  //画面が描画された後にフェードイン開始
-  useEffect(() => {
+  //画面が描画される直前にフェードイン開始
+  useLayoutEffect(() => {
     if (!loading) {
-      useLayoutEffect(() => {
         setShow(true);
-      });
-    }
+      }
   }, [loading]);
 
   if (loading) {
@@ -68,4 +65,6 @@ function App() {
       </div>
   );
 }
+
+
 export default App;
