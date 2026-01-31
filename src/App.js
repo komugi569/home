@@ -9,13 +9,13 @@ function App() {
       setTimeout(() => {
         setLoading(false);
         setShow(true);
-      }, 2000);
+      }, 1000);
   }, []);
   
   if (loading) {
     return <div className="loading">Loading...</div>;
   }
-  
+
   return (
     <>
     <div className={`fade-in ${show ? "show" : ""}`}>
