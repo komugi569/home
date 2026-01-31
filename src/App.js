@@ -2,12 +2,20 @@ import { useEffect, useState } from "react";
 import "./style.css";
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-      setShow(true);
+      setTimeout(() => {
+        setLoading(false);
+        setShow(true);
+      }, 2000);
   }, []);
-
+  
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+  
   return (
     <>
     <div className={`fade-in ${show ? "show" : ""}`}>
