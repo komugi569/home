@@ -22,6 +22,12 @@ function App() {
             <li>セキュリティ強化</li>
           </ul>
           </section>
+          
+          <section>
+            <h2>リンク</h2>
+            <a href="https://login.pine-online.net">ログインページへ</a>
+          </section>
+
       </main>
 
       <footer>
