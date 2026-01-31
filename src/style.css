@@ -35,10 +35,8 @@ footer {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(10px);
-  transition:
-  opacity 3s ease-out, 
-  transform 1.5s ease-out;
+  transform: translateY(20px);
+  transition: opacity 3s ease-out,  transform 1.5s ease-out;
 }
 
 .fade-in.show {

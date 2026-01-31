@@ -29,7 +29,6 @@ function App() {
   }
 
   return (
-    <>
     <div className={`fade-in ${show ? "show" : ""}`}>
     <header>
       <h1>PINE3</h1>
@@ -62,12 +61,11 @@ function App() {
             </a>
           </section>
       </main>
-      </div>
 
       <footer>
         <p>2026 PINE3 All rights reserved.</p>
-      </footer>
-      </>
+     </footer>
+      </div>
   );
 }
 export default App;
