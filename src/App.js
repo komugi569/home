@@ -29,7 +29,8 @@ function App() {
             href="https://login.pine-online.net"
             target="_blank"
             rel="noopener noreferrer"
-            >ログインページへ
+            >
+              ログインページへ
             </a>
           
           </section>
