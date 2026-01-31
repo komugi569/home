@@ -25,7 +25,13 @@ function App() {
           
           <section>
             <h2>リンク</h2>
-            <a href="https://login.pine-online.net">ログインページへ</a>
+            <a
+            href="https://login.pine-online.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ログインページへ
+            </a>
+          
           </section>
 
       </main>
