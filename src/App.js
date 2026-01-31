@@ -6,10 +6,16 @@ function App() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+  //ローディング終了
+    const loadingTimer = setTimeout(() => {
+      setLoading(false);
+      //少し遅らせてフェードイン
       setTimeout(() => {
-        setLoading(false);
         setShow(true);
-      }, 1000);
+      }, 50);
+    }, 1000);
+
+    return () => clearTimeout(loadingTimer);
   }, []);
   
   if (loading) {
