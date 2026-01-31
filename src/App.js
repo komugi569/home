@@ -1,8 +1,16 @@
+import { useEffect, useState } from "react";
 import "./style.css";
 
 function App() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+      setShow(true);
+  }, []);
+
   return (
     <>
+    <div className={`fade-in ${show ? "show" : ""}`}>
     <header>
       <h1>PINE3</h1>
       <p>未来を繋ぐプラットフォーム</p>
@@ -32,10 +40,9 @@ function App() {
             >
               ログインページへ
             </a>
-          
           </section>
-
       </main>
+      </div>
 
       <footer>
         <p>2026 PINE3 All rights reserved.</p>
