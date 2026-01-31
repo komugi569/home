@@ -5,19 +5,25 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [show, setShow] = useState(false);
 
+  //ローディング制御
   useEffect(() => {
   //ローディング終了
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-      //少し遅らせてフェードイン
-      setTimeout(() => {
-        setShow(true);
-      }, 50);
     }, 1000);
 
     return () => clearTimeout(loadingTimer);
   }, []);
   
+  //画面が描画された後にフェードイン開始
+  useEffect(() => {
+    if (!loading) {
+      requestAnimationFrame(() => {
+        setShow(true);
+      });
+    }
+  }, [loading]);
+
   if (loading) {
     return <div className="loading">Loading...</div>;
   }
