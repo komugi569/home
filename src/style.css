@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #3f87ff, #5bc0ff);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card{
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+footer {
+    background: #777;
+    text-align: center;
+    padding: 20px;
+}
