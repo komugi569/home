@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import "./style.css";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   //画面が描画された後にフェードイン開始
   useEffect(() => {
     if (!loading) {
-      requestAnimationFrame(() => {
+      useLayoutEffect(() => {
         setShow(true);
       });
     }
